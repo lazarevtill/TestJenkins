@@ -1,0 +1,30 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: kub8s-test
+  labels:
+    name: kub8s-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: testjenkins
+  template:
+    metadata:
+      name: testjenkins
+      labels:
+        name: testjenkins
+    spec:
+      containers:
+        - name: testjenkins
+          image: localhost:32000/lazarevtill/testjenkins
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: 256Mi
+            limits:
+              memory: 512Mi
+          env:
+            - name: DEBUG_MODE
+              value: "1"
