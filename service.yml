@@ -7,7 +7,7 @@ spec:
     pod: testjenkins
   ports:
   - protocol: TCP
-    port: 8000
-    # targetPort: 8001
+    port: 8080
+    targetPort: 8080
   type: ClusterIP
   # type: NodePort
