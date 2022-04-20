@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: testjenkins
+spec:
+  selector:
+    pod: testjenkins
+  ports:
+  - protocol: TCP
+    port: 8000
+    # targetPort: 8001
+  type: ClusterIP
+  # type: NodePort
