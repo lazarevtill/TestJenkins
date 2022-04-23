@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'git clone https://github.com/lazarevtill/TestJenkins.git'
-        sh 'docker build --tag testjenkins -f TestJenkins/Dockerfile'
+        sh 'docker build -t testjenkins:latest -f TestJenkins/Dockerfile .'
       }
     }
 
